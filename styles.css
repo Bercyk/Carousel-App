@@ -1,0 +1,130 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+}
+
+.carousel{
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 450px;
+}
+
+.carousel .carousel-item .item-image{
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.carousel .carousel-details {   
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel .carousel-item-visible {
+    display: block;
+    animation: fadeVisibility 0.4s;
+}
+
+.carousel-item,
+.carousel-item-hidden {
+    display: none;
+}
+
+/* BUTTONS */
+
+.carousel .carousel-details .carousel-buttons.item-button {
+    border: none;
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgb(75, 75, 75);
+    font-size: 300%;
+    opacity: 0.0;
+    transition: opacity 0.4s;
+}
+
+/* DIMMED */
+.carousel .carousel-details:hover .btn-visibility {
+    opacity: 0.6;
+}
+
+.carousel .carousel-details .carousel-content {
+    padding: 15px;
+    width: 100%;
+    position: relative;
+}
+
+/* DESCRIPTION */
+
+.carousel .carousel-details .carousel-content .item-text {
+    text-align: left;
+    width: 300px;
+    letter-spacing: 0.065em;
+    opacity: 0;
+    transition: opacity 0.4s;
+    padding: 0.8em;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 25px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* DIMMED */
+
+.carousel .carousel-details:hover .carousel-content .item-text {
+    opacity: 1;
+    animation: fadeVisibility 0.4s;
+}
+
+.carousel .carousel-content .item-text .item-title {
+    font-size: 250%;
+    line-height: 0.1em;
+}
+
+.carousel .carousel-content .item-text .item-description {
+    text-align: justify;
+    margin: 0;
+}
+
+.carousel .carousel-details .carousel-content .item-indicators {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.carousel .carousel-details .carousel-content .item-indicators .item-indicator {
+    width: 1.25em;
+    background-color: grey;
+    height: 0.15em;
+    border: none;
+    margin: 0 0.1em;
+    
+}
+
+.carousel .carousel-details .carousel-content .item-indicators .item-indicator.item-active {
+    
+    background-color: white;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
